@@ -9,7 +9,7 @@ public class ConversationIntro {
   
   /** Returns an integer one larger than its input */
   public int plusOne(int n) {
-    // n = n+1;
+    n = n+1;
     return n;
   }
 
@@ -21,7 +21,7 @@ public class ConversationIntro {
   
   /** Returns an integer that is double its input */
   public int timesTwo(int n) {
-    return 0;
+    return n*2;
   }
 
   /*
@@ -29,8 +29,9 @@ public class ConversationIntro {
    */
   
   /** Returns the square of its input */
-  public int squared(int n) {
-    return 0;
+  public int squared(int n) { 
+    //double a = Math.pow(n, 2.0);
+    return n*n;
   }
 
   /*
@@ -39,7 +40,7 @@ public class ConversationIntro {
   
   /** Divides its input by seven, dropping remainders */
   public int intDivideBy7(int n) {
-    return 0;
+    return n/7;
   }
 
   /*
@@ -48,7 +49,8 @@ public class ConversationIntro {
   
   /** Divides its input by 7 */
   public double doubleDivideBy7(int n) {
-    return 0;
+    return (double) n/7;  
+    // return n/7.0;
   }
 
   /*
@@ -63,11 +65,11 @@ public class ConversationIntro {
   /** Returns true if its input is prime */
   public static boolean isPrime(int n) {
     boolean isPrime = (n > 1); // one, zero, and negatives not prime
-    /*for (int i = 2; i <= Math.sqrt(n); i++) {
+    for (int i = 2; i <= Math.sqrt(n); i++) {
         if (n%i == 0) {
             isPrime = false;
         }
-    }*/
+    }
     return isPrime;
   }
 
@@ -77,7 +79,7 @@ public class ConversationIntro {
   
   /** Returns true if its input is even */
   public boolean isEven(int n) {
-    return false;
+    return (n%2 == 0);
   }
 
   /*
@@ -92,8 +94,7 @@ public class ConversationIntro {
   
   /** Returns true if its input is a comma */
   public static boolean isComma(String s) {
-    //return s.equals(",");
-    return (s == ",");
+    return s.equals(",");
   }
 
   /*
@@ -102,7 +103,17 @@ public class ConversationIntro {
   
   /** Returns true if its input is one of:  .,?! */
   public boolean isPunctuation(String s) {
-    return false;
+    /*if ((s.equals(","))|| (s.equals("."))|| (s.equals("?"))
+    || (s.equals("!"))|| (s.equals("*"))) {
+      return true;
+    }
+    else{
+      return false;
+    }*/
+    if (s.length() != 1){
+      return false;
+    }
+    return ".,?! */".contains(s);
   }
 
   /*
@@ -111,6 +122,13 @@ public class ConversationIntro {
   
   /** Returns its input, unless it is "I" or "you", which switch */
   public String mirrorWord(String s) {
+    if (s.equals("I")){
+      return "you";
+    }
+    else if (s.equals("you")){
+      return "I";
+    }
+
     return s;
   }
 
